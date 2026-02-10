@@ -61,7 +61,89 @@ This section has moved here: [https://facebook.github.io/create-react-app/docs/m
 
 This section has moved here: [https://facebook.github.io/create-react-app/docs/advanced-configuration](https://facebook.github.io/create-react-app/docs/advanced-configuration)
 
-### Deployment
+### Docker Deployment
+
+This app is containerized and ready to deploy using Docker. You can build and run it in a container without needing Node.js installed on your system.
+
+### Prerequisites
+
+- Docker installed on your system ([Get Docker](https://docs.docker.com/get-docker/))
+- Docker Compose (usually included with Docker Desktop)
+
+### Quick Start with Docker Compose
+
+The easiest way to run the app:
+
+```bash
+docker-compose up --build
+```
+
+The app will be available at [http://localhost:8080](http://localhost:8080)
+
+To run in detached mode (background):
+
+```bash
+docker-compose up -d --build
+```
+
+To stop the container:
+
+```bash
+docker-compose down
+```
+
+### Building and Running with Docker
+
+Alternatively, you can build and run the Docker image directly:
+
+**Build the image:**
+```bash
+docker build -t fhir-study-app .
+```
+
+**Run the container:**
+```bash
+docker run -p 8080:80 fhir-study-app
+```
+
+The app will be available at [http://localhost:8080](http://localhost:8080)
+
+To run in detached mode:
+```bash
+docker run -d -p 8080:80 --name fhir-study-app fhir-study-app
+```
+
+**Change the port:**
+If you want to use a different port (e.g., 3000), modify the port mapping:
+```bash
+docker run -p 3000:80 fhir-study-app
+```
+
+### Sharing the Docker Image
+
+To share the app with others, you can:
+
+1. **Export the image:**
+   ```bash
+   docker save fhir-study-app -o fhir-study-app.tar
+   ```
+   Share the `.tar` file, and others can load it with:
+   ```bash
+   docker load -i fhir-study-app.tar
+   ```
+
+2. **Push to a registry:**
+   ```bash
+   docker tag fhir-study-app yourusername/fhir-study-app:latest
+   docker push yourusername/fhir-study-app:latest
+   ```
+   Others can then pull and run:
+   ```bash
+   docker pull yourusername/fhir-study-app:latest
+   docker run -p 8080:80 yourusername/fhir-study-app:latest
+   ```
+
+## Deployment
 
 This section has moved here: [https://facebook.github.io/create-react-app/docs/deployment](https://facebook.github.io/create-react-app/docs/deployment)
 
