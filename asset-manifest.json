@@ -1,0 +1,15 @@
+{
+  "files": {
+    "main.css": "/fhir-study-app/static/css/main.b556f515.css",
+    "main.js": "/fhir-study-app/static/js/main.376e1f59.js",
+    "static/js/453.35188db0.chunk.js": "/fhir-study-app/static/js/453.35188db0.chunk.js",
+    "index.html": "/fhir-study-app/index.html",
+    "main.b556f515.css.map": "/fhir-study-app/static/css/main.b556f515.css.map",
+    "main.376e1f59.js.map": "/fhir-study-app/static/js/main.376e1f59.js.map",
+    "453.35188db0.chunk.js.map": "/fhir-study-app/static/js/453.35188db0.chunk.js.map"
+  },
+  "entrypoints": [
+    "static/css/main.b556f515.css",
+    "static/js/main.376e1f59.js"
+  ]
+}
